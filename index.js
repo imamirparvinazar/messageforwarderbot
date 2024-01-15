@@ -15,7 +15,7 @@ bot.on('message', (msg) => {
         bot.sendMessage(chatId, "سلام! پیامت رو بفرست تا به کانالت هدایت کنم. یادت نره من رو در کانالت ادمین کنی.")
     } else {
         // Append your specific text to the received message
-        const appendedMessage = messageText + '\nراه های ارتباطی: \n🌐 @testusername\n🌐 @testusername2'; 
+        const appendedMessage = messageText + '\n\nراه های ارتباطی ما: \n🌐 @crypto_859099\nکانال: \n🌐 @crypto_invest2024'; 
         // Send the modified message to the channel
         bot.sendMessage(channel, appendedMessage);
         bot.sendMessage(msg.chat.id, "پیام ارسال شد!")

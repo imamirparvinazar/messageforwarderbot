@@ -22,27 +22,27 @@ bot.on('message', (msg) => {
   if (messageText.startsWith('/start')) {
     // Send a specific message when /start command is used
     bot.sendMessage(chatId, "سلام! پیامت رو بفرست تا به کانالت هدایت کنم. یادت نره من رو در کانالت ادمین کنی.");
-  } else if (messageText) {
+  } else if (messageText !== undefined) {
     // Append your specific text to the received message
-    const appendedMessage = messageText + '\n\nراه های ارتباطی ما: \n🌐 @crypto_859099\nکانال: \n🌐 @crypto_invest2024';
+    const appendedMessage = messageText + '\n\nراه های ارتباطی ما: \n🌐 @crypto_invest2024\nکانال: \n🌐 @crypto_859099';
 
     // Send the modified message to the channel
     bot.sendMessage(channel, appendedMessage);
-  } else if (messagePhoto) {
+    bot.sendMessage(msg.chat.id, "پیام ارسال شد!")
+  } else if (messagePhoto !== undefined) {
     // Get the ID of the last photo in the array (the largest size)
     const photoId = messagePhoto[messagePhoto.length - 1].file_id;
 
     // Construct the caption with appended text, if available
     let caption = '';
-    if (messageCaption) {
-      caption = messageCaption + '\n\nراه های ارتباطی ما: \n🌐 @crypto_859099\nکانال: \n🌐 @crypto_invest2024';
+    if (messageCaption !== undefined ) {
+      caption = messageCaption + '\n\nراه های ارتباطی ما: \n🌐 @crypto_invest2024\nکانال: \n🌐 @crypto_859099';
     } else {
-      caption = '\n\nراه های ارتباطی ما: \n🌐 @crypto_859099\nکانال: \n🌐 @crypto_invest2024';
+      caption = '\n\nراه های ارتباطی ما: \n🌐 @crypto_invest2024\nکانال: \n🌐 @crypto_859099';
     }
 
     // Forward the photo to the channel with the caption
     bot.sendPhoto(channel, photoId, { caption: caption });
+    bot.sendMessage(msg.chat.id, "پیام ارسال شد!")
   }
-
-  bot.sendMessage(msg.chat.id, "پیام ارسال شد!")
 });

@@ -1,7 +1,7 @@
 const TelegramBot = require('node-telegram-bot-api');
 
 // Replace 'YOUR_TELEGRAM_BOT_TOKEN' with your actual bot token
-const bot = new TelegramBot('6812587488:AAFQAmQpyE6oI5_RT0KFZKqH0KIAG3CgaYw', { polling: true });
+const bot = new TelegramBot('6962275572:AAH-WL3dmjOtY_y1uDeGBw-DdVpwoKn74ig', { polling: true });
 
 // Replace 'YOUR_CHANNEL_ID' with your actual channel ID
 const channel = '-1001573630378';
